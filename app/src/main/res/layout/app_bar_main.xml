@@ -22,6 +22,14 @@
 
     <include layout="@layout/content_main" />
 
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/colorPrimary"
+        app:tabTextColor="@android:color/background_light">
 
+    </com.google.android.material.tabs.TabLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
