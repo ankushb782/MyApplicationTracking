@@ -66,21 +66,22 @@ class HomeFragment : Fragment() {
         var mDataListItems = ArrayList<TimeLineModel>()
 
         mDataListItems.add(TimeLineModel("CARLISLE,PA","Jul 29 @0800 - 2000 EDT","#362549","#03DAC5","#03DAC5"))
+        mDataListItems.add(TimeLineModel("CARLISLE,PA","Jul 29 @0800 - 2000 EDT","#03DAC5","#362549","#362549"))
+        mDataList.add(ModelList(mDataListItems))
 
+        mDataListItems = ArrayList<TimeLineModel>()
+        mDataListItems.add(TimeLineModel("CARLISLE,PA","Jul 29 @0800 - 2000 EDT","#362549","#03DAC5","#03DAC5"))
+        mDataListItems.add(TimeLineModel("CARLISLE,PA","Jul 29 @0800 - 2000 EDT","#03DAC5","#362549","#362549"))
         mDataListItems.add(TimeLineModel("CARLISLE,PA","Jul 29 @0800 - 2000 EDT","#03DAC5","#362549","#362549"))
 
-        mDataListItems.add(TimeLineModel("CARLISLE,PA","Jul 29 @0800 - 2000 EDT","#362549","#383eae","#383eae"))
+        mDataList.add(ModelList(mDataListItems))
+     //   mDataListItems.add(TimeLineModel("CARLISLE,PA","Jul 29 @0800 - 2000 EDT","#362549","#383eae","#383eae"))
+
+      //  mDataListItems.add(TimeLineModel("CARLISLE,PA","Jul 29 @0800 - 2000 EDT","#362549","#362549","#362549"))
+
+     //   mDataList.add(ModelList(mDataListItems))
 
 
-
-
-        for (i in 1..3) {
-            if (i==2){
-                mDataListItems.add(TimeLineModel("CARLISLE,PA","Jul 29 @0800 - 2000 EDT","#362549","#362549","#362549"))
-
-            }
-            mDataList.add(ModelList(mDataListItems))
-        }
 
 
 

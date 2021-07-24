@@ -57,7 +57,6 @@ class HomeListAdapter(
 
 
         val timeLineModel = mFeedList[position]
-        val mDataList = ArrayList<TimeLineModel>()
 
 
        val mAdapter:DeliveryDetailAdapter =  DeliveryDetailAdapter(timeLineModel.list,context)

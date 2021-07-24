@@ -60,7 +60,7 @@ class DeliveryDetailAdapter(
             holder.view2.setBackgroundColor(Color.parseColor(mFeedList[position].view2Color))
         }else  if(position==mFeedList.size-1){
             holder.view2.visibility=View.INVISIBLE
-            holder.view1.setBackgroundColor(Color.parseColor(mFeedList[position].view1Color))
+            holder.view1.setBackgroundColor(Color.parseColor(mFeedList[position-1].view1Color))
             holder.view2.setBackgroundColor(Color.parseColor(mFeedList[position].view2Color))
         }else{
             holder.view1.visibility=View.VISIBLE
