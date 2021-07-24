@@ -2,6 +2,7 @@ package com.tracking.ui.home
 
 import android.app.AlertDialog
 import android.content.DialogInterface
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,10 +16,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.tracking.R
-import com.tracking.ui.DeliveryDetailAdapter
-import com.tracking.ui.HomeListAdapter
-import com.tracking.ui.ProgressStage
-import com.tracking.ui.TimeLineModel
+import com.tracking.ui.*
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import java.util.*
@@ -27,7 +25,7 @@ class HomeFragment : Fragment() {
 
   //  private lateinit var homeViewModel: HomeViewModel
     private lateinit var mAdapter: HomeListAdapter
-    private val mDataList = ArrayList<TimeLineModel>()
+    private val mDataList = ArrayList<ModelList>()
     private lateinit var mLayoutManager: LinearLayoutManager
     var recyclerView:RecyclerView?=null
     override fun onCreateView(
@@ -65,9 +63,25 @@ class HomeFragment : Fragment() {
 
     fun assignData(){
 
-        mDataList.add(TimeLineModel("CARLISLE,PA","Jul 29 @0800 - 2000 EDT"))
-        mDataList.add(TimeLineModel("CARLISLE,PA","Jul 29 @0800 - 2000 EDT"))
-        mDataList.add(TimeLineModel("CARLISLE,PA","Jul 29 @0800 - 2000 EDT"))
+        var mDataListItems = ArrayList<TimeLineModel>()
+
+        mDataListItems.add(TimeLineModel("CARLISLE,PA","Jul 29 @0800 - 2000 EDT","#362549","#03DAC5","#03DAC5"))
+
+        mDataListItems.add(TimeLineModel("CARLISLE,PA","Jul 29 @0800 - 2000 EDT","#03DAC5","#362549","#362549"))
+
+        mDataListItems.add(TimeLineModel("CARLISLE,PA","Jul 29 @0800 - 2000 EDT","#362549","#383eae","#383eae"))
+
+
+
+
+        for (i in 1..3) {
+            if (i==2){
+                mDataListItems.add(TimeLineModel("CARLISLE,PA","Jul 29 @0800 - 2000 EDT","#362549","#362549","#362549"))
+
+            }
+            mDataList.add(ModelList(mDataListItems))
+        }
+
 
 
     }

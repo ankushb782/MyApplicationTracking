@@ -6,6 +6,9 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 class TimeLineModel(
         var title: String,
-        var decription: String
+        var decription: String,
+        var circleColor: String,
+        var view1Color: String,
+        var view2Color: String
 
 ) : Parcelable

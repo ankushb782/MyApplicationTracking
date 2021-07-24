@@ -22,7 +22,7 @@ import kotlinx.android.synthetic.main.item_timeline.view.*
 import java.util.*
 
 class HomeListAdapter(
-    private val mFeedList: List<TimeLineModel>,
+    private val mFeedList: List<ModelList>,
     private var context: Context
 ) : RecyclerView.Adapter<HomeListAdapter.TimeLineViewHolder>() {
 
@@ -58,10 +58,9 @@ class HomeListAdapter(
 
         val timeLineModel = mFeedList[position]
         val mDataList = ArrayList<TimeLineModel>()
-        mDataList.add(TimeLineModel("CARLISLE,PA","Jul 29 @0800 - 2000 EDT"))
-        mDataList.add(TimeLineModel("CARLISLE,PA","Jul 29 @0800 - 2000 EDT"))
-        mDataList.add(TimeLineModel("CARLISLE,PA","Jul 29 @0800 - 2000 EDT"))
-       val mAdapter:DeliveryDetailAdapter =  DeliveryDetailAdapter(mDataList,context)
+
+
+       val mAdapter:DeliveryDetailAdapter =  DeliveryDetailAdapter(timeLineModel.list,context)
         holder.recyclerView?.adapter=mAdapter
 
         holder.imageView.setOnClickListener {

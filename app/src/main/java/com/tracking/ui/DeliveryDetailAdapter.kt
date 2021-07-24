@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.ColorFilter
 import android.graphics.LightingColorFilter
+import android.graphics.PorterDuff
 import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
@@ -40,8 +41,7 @@ class DeliveryDetailAdapter(
     @RequiresApi(Build.VERSION_CODES.M)
     fun changeConnectingLineColor(holder: TimeLineViewHolder, view1: Int, view2: Int){
 
-        holder.view1.setBackgroundColor(context.getColor(view1))
-        holder.view2.setBackgroundColor(context.getColor(view2))
+
 
     }
 
@@ -56,21 +56,30 @@ class DeliveryDetailAdapter(
 
         if(position==0){
             holder.view1.visibility=View.INVISIBLE
+         //   holder.view1.setBackgroundColor(Color.parseColor(mFeedList[position-1].view1Color))
+            holder.view2.setBackgroundColor(Color.parseColor(mFeedList[position].view2Color))
+        }else  if(position==mFeedList.size-1){
+            holder.view2.visibility=View.INVISIBLE
+            holder.view1.setBackgroundColor(Color.parseColor(mFeedList[position].view1Color))
+            holder.view2.setBackgroundColor(Color.parseColor(mFeedList[position].view2Color))
         }else{
             holder.view1.visibility=View.VISIBLE
+            holder.view1.setBackgroundColor(Color.parseColor(mFeedList[position-1].view1Color))
+            holder.view2.setBackgroundColor(Color.parseColor(mFeedList[position].view2Color))
         }
-        if(position==mFeedList.size-1){
-            holder.view2.visibility=View.INVISIBLE
-        }else{
+      /* else{
             holder.view2.visibility=View.VISIBLE
-        }
+            holder.view1.setBackgroundColor(Color.parseColor(mFeedList[position].view1Color))
+            holder.view2.setBackgroundColor(Color.parseColor(mFeedList[position].view2Color))
+        }*/
 
-        val rnd = Random()
-        val color: Int = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256))
         val myIcon = ContextCompat.getDrawable(context,R.drawable.bg_circle)
-        val filter: ColorFilter = LightingColorFilter(color, color)
+        val filter: ColorFilter = LightingColorFilter(Color.parseColor(timeLineModel.circleColor), Color.parseColor(timeLineModel.circleColor))
+
         myIcon?.colorFilter = filter
         holder.rlText.background=(myIcon)
+
+
 
         holder.timeline.setText((position+1).toString())
 
