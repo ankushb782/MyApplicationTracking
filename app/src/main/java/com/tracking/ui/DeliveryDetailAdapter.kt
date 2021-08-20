@@ -54,18 +54,88 @@ class DeliveryDetailAdapter(
 
         val timeLineModel = mFeedList[position]
 
+        if (timeLineModel.viewType.equals("dotted")){
+
+        }
         if(position==0){
             holder.view1.visibility=View.INVISIBLE
          //   holder.view1.setBackgroundColor(Color.parseColor(mFeedList[position-1].view1Color))
-            holder.view2.setBackgroundColor(Color.parseColor(mFeedList[position].view2Color))
+
+            val myIcon = ContextCompat.getDrawable(context,R.drawable.dotted)
+            val filter: ColorFilter = LightingColorFilter(Color.parseColor(timeLineModel.view2Color), Color.parseColor(timeLineModel.view2Color))
+            myIcon?.colorFilter = filter
+            if(timeLineModel.viewType.equals("dotted")){
+                holder.view2.background=(myIcon)
+            }else{
+                val myIcon = ContextCompat.getDrawable(context,R.drawable.line)
+                val filter: ColorFilter = LightingColorFilter(Color.parseColor(timeLineModel.view2Color), Color.parseColor(timeLineModel.view2Color))
+                myIcon?.colorFilter = filter
+                holder.view2.background=(myIcon)
+               // holder.view2.setBackgroundColor(Color.parseColor(mFeedList[position].view2Color))
+            }
+
+
         }else  if(position==mFeedList.size-1){
             holder.view2.visibility=View.INVISIBLE
-            holder.view1.setBackgroundColor(Color.parseColor(mFeedList[position-1].view1Color))
-            holder.view2.setBackgroundColor(Color.parseColor(mFeedList[position].view2Color))
+           // holder.view1.setBackgroundColor(Color.parseColor(mFeedList[position-1].view1Color))
+          //  holder.view2.setBackgroundColor(Color.parseColor(mFeedList[position].view2Color))
+
+            val myIcon = ContextCompat.getDrawable(context,R.drawable.dotted)
+            val filter: ColorFilter = LightingColorFilter(Color.parseColor(timeLineModel.view2Color), Color.parseColor(timeLineModel.view2Color))
+            myIcon?.colorFilter = filter
+            if(timeLineModel.viewType.equals("dotted")){
+                holder.view2.background=(myIcon)
+            }else{
+                val myIcon = ContextCompat.getDrawable(context,R.drawable.line)
+                val filter: ColorFilter = LightingColorFilter(Color.parseColor(timeLineModel.view2Color), Color.parseColor(timeLineModel.view2Color))
+                myIcon?.colorFilter = filter
+                holder.view2.background=(myIcon)
+              //  holder.view2.setBackgroundColor(Color.parseColor(mFeedList[position].view2Color))
+            }
+
+            val myIcon1 = ContextCompat.getDrawable(context,R.drawable.dotted)
+            val filter1: ColorFilter = LightingColorFilter(Color.parseColor(mFeedList[position-1].view1Color), Color.parseColor(mFeedList[position-1].view1Color))
+            myIcon1?.colorFilter = filter1
+            if(timeLineModel.viewType.equals("dotted")){
+                holder.view1.background=(myIcon1)
+            }else{
+                val myIcon = ContextCompat.getDrawable(context,R.drawable.line)
+                val filter: ColorFilter = LightingColorFilter(Color.parseColor(mFeedList[position-1].view1Color), Color.parseColor(mFeedList[position-1].view1Color))
+                myIcon?.colorFilter = filter
+                holder.view1.background=(myIcon)
+               // holder.view1.setBackgroundColor(Color.parseColor(mFeedList[position-1].view1Color))
+            }
         }else{
             holder.view1.visibility=View.VISIBLE
             holder.view1.setBackgroundColor(Color.parseColor(mFeedList[position-1].view1Color))
             holder.view2.setBackgroundColor(Color.parseColor(mFeedList[position].view2Color))
+
+
+            val myIcon = ContextCompat.getDrawable(context,R.drawable.dotted)
+            val filter: ColorFilter = LightingColorFilter(Color.parseColor(timeLineModel.view2Color), Color.parseColor(timeLineModel.view2Color))
+            myIcon?.colorFilter = filter
+            if(timeLineModel.viewType.equals("dotted")){
+                holder.view2.background=(myIcon)
+            }else{
+                val myIcon = ContextCompat.getDrawable(context,R.drawable.line)
+                val filter: ColorFilter = LightingColorFilter(Color.parseColor(mFeedList[position].view2Color), Color.parseColor(mFeedList[position].view2Color))
+                myIcon?.colorFilter = filter
+                holder.view2.background=(myIcon)
+               // holder.view2.setBackgroundColor(Color.parseColor(mFeedList[position].view2Color))
+            }
+
+            val myIcon1 = ContextCompat.getDrawable(context,R.drawable.dotted)
+            val filter1: ColorFilter = LightingColorFilter(Color.parseColor(mFeedList[position-1].view1Color), Color.parseColor(mFeedList[position-1].view1Color))
+            myIcon1?.colorFilter = filter1
+            if(timeLineModel.viewType.equals("dotted")){
+                holder.view1.background=(myIcon1)
+            }else{
+                val myIcon = ContextCompat.getDrawable(context,R.drawable.line)
+                val filter: ColorFilter = LightingColorFilter(Color.parseColor(mFeedList[position-1].view1Color), Color.parseColor(mFeedList[position-1].view1Color))
+                myIcon?.colorFilter = filter
+                holder.view1.background=(myIcon)
+               // holder.view1.setBackgroundColor(Color.parseColor(mFeedList[position-1].view1Color))
+            }
         }
       /* else{
             holder.view2.visibility=View.VISIBLE

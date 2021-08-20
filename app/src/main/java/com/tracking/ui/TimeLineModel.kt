@@ -9,6 +9,7 @@ class TimeLineModel(
         var decription: String,
         var circleColor: String,
         var view1Color: String,
-        var view2Color: String
+        var view2Color: String,
+        var viewType: String
 
 ) : Parcelable
